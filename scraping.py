@@ -12,6 +12,7 @@ import time
 import threading
 
 def task():
+
     #scraping from yahoo 
     url_0="https://stocks.finance.yahoo.co.jp/stocks/detail/?code=usdjpy"
     res = req.urlopen(url_0)
@@ -48,6 +49,7 @@ def schedule(interval, f, wait=True):
         next_time = ((base_time - time.time()) % interval) or interval
         time.sleep(next_time)
     
+
 
 schedule(5,task())
 
